@@ -5,13 +5,15 @@ data.cleaned <- na.omit(data)
 
 is.na(data[4,2])
 is.na(data[4,1])
-is.na(data$Income)
+is.na(data$Income) # devuelve la columna completa en boleano
 
 #Limpiar NA de solamente la variable Income
 data.income.cleaned <- data[!is.na(data$Income),]
+
 #Filas completas para un data frame
 complete.cases(data)
 data.cleaned.2 <- data[complete.cases(data), ]
+
 #Convertir los ceros de ingresos en NA
 data$Income[data$Income == 0] <- NA
 
