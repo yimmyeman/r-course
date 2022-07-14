@@ -26,10 +26,10 @@ complete.data <- mice::complete(imputed_data)
 housing.data$ptratio <- complete.data$ptratio
 housing.data$rad <- complete.data$rad
 
+# Cuantos NA tiene el DF.
 anyNA(housing.data)
 
-
-
+#No funciona
 impute_arg <- aregImpute(~ptratio + rad, data = housing.data, n.impute = 5)
 
 impute_arg
