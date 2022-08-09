@@ -9,7 +9,8 @@ bn$class <- factor(bn$class)
 t.id <- createDataPartition(bn$class, p= 0.7, list = F)
 
 mod <- nnet(class ~ ., data = bn[t.id,], 
-            size = 3, maxit = 10000, decay = .001, rang = 0.05,
+            size = 3, maxit = 10000, 
+            decay = .001, rang = 0.05,
             na.action = na.omit, skip = T)
 #rang * max(|variables|) ~ 1
 apply(bn, 2, max)
